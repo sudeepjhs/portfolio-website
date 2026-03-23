@@ -2,7 +2,9 @@
 
 import { Box, Container, Flex, HStack, Link, Text } from "@chakra-ui/react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useState, useEffect } from "react"
+import NextLink from "next/link"
+import { useEffect, useState } from "react"
+import { ColorModeButton } from "@/components/ui/color-mode"
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -11,7 +13,7 @@ export const Navbar = () => {
   const backgroundColor = useTransform(
     scrollY,
     [0, 50],
-    ["rgba(19, 19, 24, 0)", "rgba(19, 19, 24, 0.7)"]
+    ["rgba(19, 19, 24, 0)", "rgba(19, 19, 24, 0.8)"]
   )
 
   const borderBottom = useTransform(
@@ -27,16 +29,18 @@ export const Navbar = () => {
   }, [scrollY])
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Projects", href: "#projects" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
+    { name: "About", href: "/about" },
   ]
 
   return (
     <Box
       as={motion.nav}
-      style={{ backgroundColor: "#131318", borderBottom: "1px solid rgba(163, 230, 53, 0.1)" }}
+      style={{ 
+        backgroundColor: backgroundColor as any, 
+        borderBottom: borderBottom as any 
+      }}
       position="fixed"
       top="0"
       left="0"
@@ -49,23 +53,29 @@ export const Navbar = () => {
       <Container maxW="7xl">
         <Flex justify="space-between" align="center">
           <Link
-            href="#"
+            as={NextLink}
+            href="/"
             _hover={{ textDecoration: "none" }}
           >
-            <Text
-              fontSize="2xl"
-              fontWeight="bold"
-              color="#a3e635"
-              fontFamily="var(--font-geist-mono)"
-              letterSpacing="tighter"
-            >
-              SUDEEP.DEV
-            </Text>
+            <Box position="relative" role="group">
+              <Text
+                fontSize="2xl"
+                fontWeight="black"
+                color="#a3e635"
+                fontFamily="var(--font-geist-mono)"
+                letterSpacing="tighter"
+                _groupHover={{ textShadow: "0 0 10px rgba(163, 230, 53, 0.5)" }}
+                transition="all 0.3s"
+              >
+                SUDEEP.DEV
+              </Text>
+            </Box>
           </Link>
 
           <HStack gap={8} display={{ base: "none", md: "flex" }}>
             {navLinks.map((link) => (
               <Link
+                as={NextLink}
                 key={link.name}
                 href={link.href}
                 fontSize="sm"
@@ -77,7 +87,12 @@ export const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            
+            <Box width="1px" height="20px" bg="whiteAlpha.200" mx={2} />
+            <ColorModeButton />
           </HStack>
+
+
 
           <Box
             px={4}
