@@ -92,13 +92,22 @@ const SkillCard = ({
 )
 
 export const Hero = () => {
+  // First typing effect (Original) for smaller text
   const { heroRoles: roles } = portfolioData
   const [roleIndex, setRoleIndex] = useState(0)
   const [text, setText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(100)
 
+  // Second typing effect (New) for H1
+  const h1Roles = ["SOFTWARE ENGINEER", "SOLVING BUSINESS WITH AI"]
+  const [h1Index, setH1Index] = useState(0)
+  const [h1Text, setH1Text] = useState("")
+  const [h1IsDeleting, setH1IsDeleting] = useState(false)
+  const [h1TypingSpeed, setH1TypingSpeed] = useState(100)
 
+
+  // Original useEffect
   useEffect(() => {
     const timeout = setTimeout(() => {
       const currentRole = roles[roleIndex]
@@ -124,8 +133,48 @@ export const Hero = () => {
     }, typingSpeed)
 
     return () => clearTimeout(timeout)
-  }, [text, isDeleting, roleIndex, typingSpeed])
+  }, [text, isDeleting, roleIndex, typingSpeed, roles])
 
+  // New H1 useEffect
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const currentRole = h1Roles[h1Index]
+
+      if (!h1IsDeleting) {
+        setH1Text(currentRole.substring(0, h1Text.length + 1))
+        setH1TypingSpeed(100)
+
+        if (h1Text === currentRole) {
+          setH1TypingSpeed(2500) // Pause at the end
+          setH1IsDeleting(true)
+        }
+      } else {
+        setH1Text(currentRole.substring(0, h1Text.length - 1))
+        setH1TypingSpeed(50)
+
+        if (h1Text === "") {
+          setH1IsDeleting(false)
+          setH1Index((prev) => (prev + 1) % h1Roles.length)
+          setH1TypingSpeed(500) // Pause before next role
+        }
+      }
+    }, h1TypingSpeed)
+
+    return () => clearTimeout(timeout)
+  }, [h1Text, h1IsDeleting, h1Index, h1TypingSpeed])
+
+  // Helper to color 'AI' in the new typing effect
+  const renderH1Text = () => {
+    if (h1Text.endsWith("AI")) {
+      const parts = h1Text.split("AI");
+      return (
+        <>
+          {parts[0]}<Text as="span" color="brand">AI</Text>{parts[1]}
+        </>
+      )
+    }
+    return h1Text;
+  }
 
   return (
     <Box
@@ -170,9 +219,25 @@ export const Hero = () => {
               fontWeight="black"
               lineHeight="shorter"
               letterSpacing="tighter"
+              minH={{ base: "140px", md: "180px", lg: "220px" }}
             >
-              HI, I'M <Text as="span" color="brand">{portfolioData.name.toUpperCase()}</Text><br />
-              SOFTWARE ENGINEER SOLVING BUSINESS WITH <Text as="span" color="brand">AI</Text>
+              <Text as="span" position="absolute" width="1px" height="1px" padding="0" margin="-1px" overflow="hidden" clip="rect(0, 0, 0, 0)" whiteSpace="nowrap" borderWidth="0">
+                SOFTWARE ENGINEER SOLVING BUSINESS WITH AI
+              </Text>
+              <Box aria-hidden="true">
+                HI, I'M <Text as="span" color="brand">{portfolioData.name.toUpperCase()}</Text><br />
+                {renderH1Text()}
+                <Box
+                  as="span"
+                  display="inline-block"
+                  width={{ base: "4px", md: "8px" }}
+                  height="0.8em"
+                  bg="brand"
+                  ml={3}
+                  verticalAlign="baseline"
+                  className="typing-cursor"
+                />
+              </Box>
             </Heading>
           </motion.div>
 
