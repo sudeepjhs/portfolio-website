@@ -93,22 +93,28 @@ export const Navbar = () => {
 
 
 
-          <Box
-            px={4}
-            py={1.5}
-            borderRadius="sm"
-            border="1px solid"
-            borderColor="brand"
-            color="brand"
-            fontSize="xs"
-            fontWeight="bold"
-            fontFamily="mono"
-            cursor="pointer"
-            _hover={{ bg: "brand/10" }}
-            transition="all 0.2s"
+          <a
+            href="/resume.pdf"
+            download="Sudeep_Resume.pdf"
+            style={{ textDecoration: "none" }}
           >
-            RESUME
-          </Box>
+            <Box
+              px={4}
+              py={1.5}
+              borderRadius="sm"
+              border="1px solid"
+              borderColor="brand"
+              color="brand"
+              fontSize="xs"
+              fontWeight="bold"
+              fontFamily="mono"
+              cursor="pointer"
+              _hover={{ bg: "brand/10" }}
+              transition="all 0.2s"
+            >
+              RESUME
+            </Box>
+          </a>
         </Flex>
       </Container>
     </Box>
