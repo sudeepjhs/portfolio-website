@@ -1,7 +1,8 @@
 "use client"
 
-import { Box, SimpleGrid, Text, Heading, VStack, Badge, Link, Image } from "@chakra-ui/react"
+import { Box, SimpleGrid, Text, Heading, VStack, Badge, HStack } from "@chakra-ui/react"
 import { motion } from "framer-motion"
+import { portfolioData } from "@/data/portfolio"
 
 interface ProjectCardProps {
   title: string
@@ -21,20 +22,20 @@ const ProjectCard = ({ title, description, tags, spanSize = 1 }: ProjectCardProp
     overflow="hidden"
     border="1px solid"
     borderColor="whiteAlpha.100"
-    _hover={{ borderColor: "#a3e635", boxShadow: "0 0 30px rgba(163, 230, 53, 0.15)" }}
+    _hover={{ borderColor: "brand", boxShadow: "0 0 30px rgba(163, 230, 53, 0.15)" }}
     transition="all 0.3s ease"
     p={6}
     height="100%"
-    minH="300px"
+    minH="250px"
     display="flex"
     flexDirection="column"
     justifyContent="space-between"
   >
     <VStack align="flex-start" gap={4}>
       <Badge
-        bg="rgba(163, 230, 53, 0.1)"
-        color="#a3e635"
-        fontFamily="var(--font-geist-mono)"
+        bg="brand/10"
+        color="brand"
+        fontFamily="mono"
         fontSize="xs"
         px={2}
         py={0.5}
@@ -44,36 +45,31 @@ const ProjectCard = ({ title, description, tags, spanSize = 1 }: ProjectCardProp
       <Heading size="md" fontWeight="black" letterSpacing="tight">
         {title}
       </Heading>
-      <Text color="whiteAlpha.600" fontSize="sm">
+      <Text color="foreground.muted" fontSize="sm" lineHeight="tall">
         {description}
       </Text>
     </VStack>
 
     <Box mt={8}>
-      <SimpleGrid columns={3} gap={2}>
+      <HStack gap={4} wrap="wrap">
         {tags.map((tag) => (
           <Text
             key={tag}
             fontSize="10px"
-            fontFamily="var(--font-geist-mono)"
+            fontFamily="mono"
             color="whiteAlpha.500"
             letterSpacing="widest"
           >
             {tag.toUpperCase()}
           </Text>
         ))}
-      </SimpleGrid>
+      </HStack>
     </Box>
   </Box>
 )
 
 export const BentoGrid = () => {
-  const projects = [
-    { title: "Quantum AI Dashboard", description: "Advanced real-time analytics for quantum computing clusters with predictive modeling.", tags: ["React", "Prisma", "AI"], spanSize: 2 },
-    { title: "Neuro Sync", description: "Biometric feedback interface for neural link simulations.", tags: ["Next.js", "D3.js"], spanSize: 1 },
-    { title: "Cyber Vault", description: "Hardened encryption layer for decentralized storage networks.", tags: ["Web3", "Solidity"], spanSize: 1 },
-    { title: "Ether Flow", description: "Low-latency streaming platform for high-performance creative workflows.", tags: ["WebRTC", "Canvas"], spanSize: 2 },
-  ]
+  const projects = portfolioData.projects
 
   return (
     <SimpleGrid columns={{ base: 1, md: 3 }} gap={6} w="full">

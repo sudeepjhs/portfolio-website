@@ -1,7 +1,8 @@
 "use client"
 
-import { Box, Container, Flex, HStack, Link, SimpleGrid, Stack, Text, VStack } from "@chakra-ui/react"
-import { LuGithub, LuLinkedin, LuTwitter, LuMail } from "react-icons/lu"
+import { Box, Container, Flex, HStack, Link, SimpleGrid, Text, VStack } from "@chakra-ui/react"
+import { LuGithub, LuLinkedin, LuMail } from "react-icons/lu"
+import { portfolioData } from "@/data/portfolio"
 
 export const Footer = () => {
   return (
@@ -12,25 +13,22 @@ export const Footer = () => {
             <Text
               fontSize="2xl"
               fontWeight="bold"
-              color="#a3e635"
-              fontFamily="var(--font-geist-mono)"
+              color="brand"
+              fontFamily="mono"
             >
-              SUDEEP.DEV
+              {portfolioData.name.split(' ')[0].toUpperCase()}.DEV
             </Text>
             <Text color="whiteAlpha.600" fontSize="sm" lineHeight="tall">
-              Designing and building high-performance digital experiences with a focus on technical excellence and premium aesthetics.
+              {portfolioData.about}
             </Text>
             <HStack gap={4}>
-              <Link href="#" color="whiteAlpha.600" _hover={{ color: "#a3e635" }}>
+              <Link href={portfolioData.github} target="_blank" color="whiteAlpha.600" _hover={{ color: "brand" }}>
                 <LuGithub size={20} />
               </Link>
-              <Link href="#" color="whiteAlpha.600" _hover={{ color: "#a3e635" }}>
+              <Link href={portfolioData.linkedin} target="_blank" color="whiteAlpha.600" _hover={{ color: "brand" }}>
                 <LuLinkedin size={20} />
               </Link>
-              <Link href="#" color="whiteAlpha.600" _hover={{ color: "#a3e635" }}>
-                <LuTwitter size={20} />
-              </Link>
-              <Link href="#" color="whiteAlpha.600" _hover={{ color: "#a3e635" }}>
+              <Link href={portfolioData.portfolio} target="_blank" color="whiteAlpha.600" _hover={{ color: "brand" }}>
                 <LuMail size={20} />
               </Link>
             </HStack>
@@ -38,16 +36,16 @@ export const Footer = () => {
 
           <VStack align="flex-start" gap={4}>
             <Text fontWeight="bold" fontSize="md">Navigation</Text>
-            <Link href="#" color="whiteAlpha.600" _hover={{ color: "#a3e635" }}>Home</Link>
-            <Link href="#projects" color="whiteAlpha.600" _hover={{ color: "#a3e635" }}>Projects</Link>
-            <Link href="#about" color="whiteAlpha.600" _hover={{ color: "#a3e635" }}>About</Link>
-            <Link href="#contact" color="whiteAlpha.600" _hover={{ color: "#a3e635" }}>Contact</Link>
+            <Link href="#" color="whiteAlpha.600" _hover={{ color: "brand" }}>Home</Link>
+            <Link href="#projects" color="whiteAlpha.600" _hover={{ color: "brand" }}>Projects</Link>
+            <Link href="#about" color="whiteAlpha.600" _hover={{ color: "brand" }}>About</Link>
+            <Link href="#contact" color="whiteAlpha.600" _hover={{ color: "brand" }}>Contact</Link>
           </VStack>
 
           <VStack align="flex-start" gap={4}>
             <Text fontWeight="bold" fontSize="md">Contact</Text>
-            <Text color="whiteAlpha.600" fontSize="sm">hello@sudeep.dev</Text>
-            <Text color="whiteAlpha.600" fontSize="sm">New York, NY</Text>
+            <Text color="whiteAlpha.600" fontSize="sm">{portfolioData.email}</Text>
+            <Text color="whiteAlpha.600" fontSize="sm">Indore, India</Text>
           </VStack>
 
           <VStack align="flex-start" gap={4}>
@@ -65,7 +63,7 @@ export const Footer = () => {
                 py={2}
                 fontSize="sm"
                 color="white"
-                _focus={{ borderColor: "#a3e635", outline: "none" }}
+                _focus={{ borderColor: "brand", outline: "none" }}
                 // @ts-ignore
                 placeholder="Email address"
               />

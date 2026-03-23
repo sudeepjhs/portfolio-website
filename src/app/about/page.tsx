@@ -7,25 +7,25 @@ import { SkillsSection } from "@/components/SkillsSection"
 
 export default function AboutPage() {
   return (
-    <Box minH="100vh" bg="#131318" color="white">
+    <Box minH="100vh" bg="background" color="white">
       <Navbar />
       <Box pt="32" pb="24">
         <Container maxW="7xl">
           <SimpleGrid columns={{ base: 1, lg: 2 }} gap={20} mb={32}>
             <VStack align="flex-start" gap={8}>
               <VStack align="flex-start" gap={4}>
-                <Text 
-                  fontSize="sm" 
-                  fontWeight="bold" 
-                  color="#a3e635" 
-                  fontFamily="var(--font-geist-mono)"
+                <Text
+                  fontSize="sm"
+                  fontWeight="bold"
+                  color="brand"
+                  fontFamily="mono"
                   letterSpacing="widest"
                 >
                   STORY
                 </Text>
                 <Heading size="4xl" fontWeight="black" letterSpacing="tighter">
                   DIGITAL <br />
-                  <Text as="span" color="#a3e635">ARCHITECT</Text>
+                  <Text as="span" color="brand">ARCHITECT</Text>
                 </Heading>
               </VStack>
               <Text fontSize="lg" color="whiteAlpha.800" lineHeight="tall">
@@ -36,9 +36,9 @@ export default function AboutPage() {
               </Text>
             </VStack>
 
-            <Box 
-              position="relative" 
-              borderRadius="2xl" 
+            <Box
+              position="relative"
+              borderRadius="2xl"
               overflow="hidden"
               border="1px solid"
               borderColor="whiteAlpha.100"
@@ -49,17 +49,17 @@ export default function AboutPage() {
               justifyContent="center"
             >
               {/* Placeholder for Profile Image */}
-              <Box 
-                w="full" 
-                h="full" 
-                bgGradient="linear(to-br, rgba(163, 230, 53, 0.05), transparent)"
+              <Box
+                w="full"
+                h="full"
+                bgGradient="linear(to-br, {colors.brand.400 / 0.05}, transparent)"
                 position="absolute"
                 top="0"
                 left="0"
               />
-              <Text 
-                fontFamily="var(--font-geist-mono)" 
-                color="whiteAlpha.200" 
+              <Text
+                fontFamily="mono"
+                color="whiteAlpha.200"
                 fontSize="xs"
                 letterSpacing="widest"
               >

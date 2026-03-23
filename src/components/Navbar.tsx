@@ -4,7 +4,6 @@ import { Box, Container, Flex, HStack, Link, Text } from "@chakra-ui/react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import NextLink from "next/link"
 import { useEffect, useState } from "react"
-import { ColorModeButton } from "@/components/ui/color-mode"
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -30,16 +29,18 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Projects", href: "/projects" },
-    { name: "About", href: "/about" },
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Contact", href: "#contact" },
   ]
 
   return (
     <Box
       as={motion.nav}
-      style={{ 
-        backgroundColor: backgroundColor as any, 
-        borderBottom: borderBottom as any 
+      style={{
+        backgroundColor: backgroundColor as any,
+        borderBottom: borderBottom as any
       }}
       position="fixed"
       top="0"
@@ -61,10 +62,10 @@ export const Navbar = () => {
               <Text
                 fontSize="2xl"
                 fontWeight="black"
-                color="#a3e635"
-                fontFamily="var(--font-geist-mono)"
+                color="brand"
+                fontFamily="mono"
                 letterSpacing="tighter"
-                _groupHover={{ textShadow: "0 0 10px rgba(163, 230, 53, 0.5)" }}
+                _groupHover={{ textShadow: "0 0 10px {colors.brand.400}" }}
                 transition="all 0.3s"
               >
                 SUDEEP.DEV
@@ -80,16 +81,14 @@ export const Navbar = () => {
                 href={link.href}
                 fontSize="sm"
                 fontWeight="medium"
-                color="whiteAlpha.800"
-                _hover={{ color: "#a3e635" }}
+                color="foreground.muted"
+                _hover={{ color: "brand" }}
                 transition="color 0.2s"
               >
                 {link.name}
               </Link>
             ))}
-            
-            <Box width="1px" height="20px" bg="whiteAlpha.200" mx={2} />
-            <ColorModeButton />
+
           </HStack>
 
 
@@ -99,13 +98,13 @@ export const Navbar = () => {
             py={1.5}
             borderRadius="sm"
             border="1px solid"
-            borderColor="#a3e635"
-            color="#a3e635"
+            borderColor="brand"
+            color="brand"
             fontSize="xs"
             fontWeight="bold"
-            fontFamily="var(--font-geist-mono)"
+            fontFamily="mono"
             cursor="pointer"
-            _hover={{ bg: "rgba(163, 230, 53, 0.1)" }}
+            _hover={{ bg: "brand/10" }}
             transition="all 0.2s"
           >
             RESUME
