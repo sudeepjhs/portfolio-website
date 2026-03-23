@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sudeepagarwal.dev/"),
   title: "Sudeep Agarwal | Software Engineer & AI Integration Specialist",
   description: "Portfolio of Sudeep Agarwal - A high-performance software engineer focused on futuristic web experiences, full-stack engineering, and AI Integration.",
   keywords: [

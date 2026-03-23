@@ -99,14 +99,6 @@ export const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(100)
 
-  // Second typing effect (New) for H1
-  const h1Roles = ["SOFTWARE ENGINEER", "SOLVING BUSINESS WITH AI"]
-  const [h1Index, setH1Index] = useState(0)
-  const [h1Text, setH1Text] = useState("")
-  const [h1IsDeleting, setH1IsDeleting] = useState(false)
-  const [h1TypingSpeed, setH1TypingSpeed] = useState(100)
-
-
   // Original useEffect
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -135,47 +127,17 @@ export const Hero = () => {
     return () => clearTimeout(timeout)
   }, [text, isDeleting, roleIndex, typingSpeed, roles])
 
-  // New H1 useEffect
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const currentRole = h1Roles[h1Index]
-
-      if (!h1IsDeleting) {
-        setH1Text(currentRole.substring(0, h1Text.length + 1))
-        setH1TypingSpeed(100)
-
-        if (h1Text === currentRole) {
-          setH1TypingSpeed(2500) // Pause at the end
-          setH1IsDeleting(true)
-        }
-      } else {
-        setH1Text(currentRole.substring(0, h1Text.length - 1))
-        setH1TypingSpeed(50)
-
-        if (h1Text === "") {
-          setH1IsDeleting(false)
-          setH1Index((prev) => (prev + 1) % h1Roles.length)
-          setH1TypingSpeed(500) // Pause before next role
-        }
-      }
-    }, h1TypingSpeed)
-
-    return () => clearTimeout(timeout)
-  }, [h1Text, h1IsDeleting, h1Index, h1TypingSpeed])
-
-  // Helper to color 'AI' in the new typing effect
-  const renderH1Text = () => {
-    if (h1Text.endsWith("AI")) {
-      const parts = h1Text.split("AI");
+  const renderText = () => {
+    if (text.includes("AI")) {
+      const parts = text.split("AI");
       return (
         <>
           {parts[0]}<Text as="span" color="brand">AI</Text>{parts[1]}
         </>
       )
     }
-    return h1Text;
+    return text;
   }
-
   return (
     <Box
       as="section"
@@ -219,14 +181,13 @@ export const Hero = () => {
               fontWeight="black"
               lineHeight="shorter"
               letterSpacing="tighter"
-              minH={{ base: "140px", md: "180px", lg: "220px" }}
             >
               <Text as="span" position="absolute" width="1px" height="1px" padding="0" margin="-1px" overflow="hidden" clip="rect(0, 0, 0, 0)" whiteSpace="nowrap" borderWidth="0">
                 SOFTWARE ENGINEER SOLVING BUSINESS WITH AI
               </Text>
               <Box aria-hidden="true">
                 HI, I'M <Text as="span" color="brand">{portfolioData.name.toUpperCase()}</Text><br />
-                {renderH1Text()}
+                {renderText()}
                 <Box
                   as="span"
                   display="inline-block"
@@ -248,30 +209,6 @@ export const Hero = () => {
             gap={{ base: 4, md: 8 }}
             w="full"
           >
-            {/* Typing text */}
-            <Box minH="1.5rem" flexShrink={0}>
-              <Text
-                fontSize={{ base: "md", md: "xl" }}
-                fontWeight="medium"
-                color="foreground.muted"
-                fontFamily="mono"
-                letterSpacing="normal"
-                textTransform="uppercase"
-              >
-                {text}
-                <Box
-                  as="span"
-                  display="inline-block"
-                  width="2px"
-                  height="1em"
-                  bg="brand"
-                  ml={1}
-                  verticalAlign="middle"
-                  className="typing-cursor"
-                />
-              </Text>
-            </Box>
-
 
           </Flex>
           {/* Skill floating cards */}
