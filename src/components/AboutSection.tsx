@@ -8,7 +8,7 @@ import { LuTarget, LuAward, LuZap } from "react-icons/lu"
 const AboutFeature = ({ icon, title, description }: { icon: any, title: string, description: string }) => (
   <VStack align="flex-start" gap={4} p={6} bg="whiteAlpha.50" borderRadius="md" border="1px solid" borderColor="whiteAlpha.100">
     <Icon as={icon} w={6} h={6} color="brand" />
-    <Heading size="sm" color="white">{title}</Heading>
+    <Heading as="h3" size="sm" color="white">{title}</Heading>
     <Text fontSize="sm" color="foreground.muted" lineHeight="tall">{description}</Text>
   </VStack>
 )
@@ -29,7 +29,7 @@ export const AboutSection = () => {
               >
                 / ABOUT ME
               </Text>
-              <Heading size="3xl" fontWeight="black" letterSpacing="tighter">
+              <Heading as="h2" size="3xl" fontWeight="black" letterSpacing="tighter">
                 CRAFTING <Text as="span" color="brand">SOLUTIONS</Text> WITH INTELLIGENCE
               </Heading>
             </VStack>

@@ -16,7 +16,7 @@ const ExperienceItem = ({ exp }: { exp: any }) => (
         >
           {exp.period.toUpperCase()}
         </Text>
-        <Heading size="lg" fontWeight="black" mt={1}>
+        <Heading as="h3" size="lg" fontWeight="black" mt={1}>
           {exp.role} <Text as="span" color="whiteAlpha.400" fontWeight="light">@</Text> {exp.company}
         </Heading>
         <Text fontSize="sm" color="whiteAlpha.500" mt={1}>
@@ -51,7 +51,7 @@ export const ExperienceSection = () => {
             >
               / PROFESSIONAL JOURNEY
             </Text>
-            <Heading size="3xl" fontWeight="black" letterSpacing="tighter">
+            <Heading as="h2" size="3xl" fontWeight="black" letterSpacing="tighter">
               WORK <Text as="span" color="brand">EXPERIENCE</Text>
             </Heading>
           </VStack>

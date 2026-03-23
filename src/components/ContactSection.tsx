@@ -19,7 +19,7 @@ export const ContactSection = () => {
               >
                 / READY TO COMMENCE?
               </Text>
-              <Heading size="4xl" fontWeight="black" letterSpacing="tighter">
+              <Heading as="h2" size="4xl" fontWeight="black" letterSpacing="tighter">
                 LET'S BUILD <br />
                 <Text as="span" color="brand">TOGETHER</Text>
               </Heading>

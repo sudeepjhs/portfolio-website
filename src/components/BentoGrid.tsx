@@ -42,7 +42,7 @@ const ProjectCard = ({ title, description, tags, spanSize = 1 }: ProjectCardProp
       >
         PROJECT
       </Badge>
-      <Heading size="md" fontWeight="black" letterSpacing="tight">
+      <Heading as="h3" size="md" fontWeight="black" letterSpacing="tight">
         {title}
       </Heading>
       <Text color="foreground.muted" fontSize="sm" lineHeight="tall">

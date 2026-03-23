@@ -48,7 +48,7 @@ export const portfolioData: PortfolioData = {
   email: "sudeepagarwaljhs@gmail.com",
   linkedin: "https://linkedin.com/in/sudeepagarwaljhs",
   github: "https://github.com/sudeepjhs",
-  portfolio: "https://crio.do/learn/portfolio/sudeep100-smart/",
+  portfolio: "https://www.sudeepagarwal.dev/",
   about:
     `Full-Stack Developer with ${new Date().getFullYear() - 2022}+ years of experience building scalable React, Next.js, and Node.js applications and integrating GPT-4 into production workflows to automate recruitment and operations.`,
   skills: [
@@ -173,6 +173,8 @@ export const portfolioData: PortfolioData = {
     "Gen AI Academy (Google & H2S)"
   ],
   heroRoles: [
+    "Software Engineer",
+    "Software Developer",
     "AI Integration Specialist",
     "Agentic AI Engineer",
     "Full-Stack Architect",

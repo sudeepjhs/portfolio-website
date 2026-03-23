@@ -53,7 +53,7 @@ export const SkillsSection = () => {
         >
           TECHNICAL CAPABILITIES
         </Text>
-        <Heading size="2xl" fontWeight="black" letterSpacing="tight">
+        <Heading as="h2" size="2xl" fontWeight="black" letterSpacing="tight">
           SKILLS & <Text as="span" color="brand">STACK</Text>
         </Heading>
       </VStack>
