@@ -53,4 +53,4 @@ The project follows a **Neon Monolith** design strategy:
 -   **Depth**: Tonal shifts and ambient glows instead of hard borders or heavy shadows.
 
 ---
-Built by Antigravity AI for Sudeep Agarwal.
+Built by Sudeep Agarwal.
