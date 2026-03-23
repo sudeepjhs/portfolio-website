@@ -12,6 +12,13 @@ import {
 } from "react-icons/si"
 import { TbBrain } from "react-icons/tb"
 
+// Custom OutSystems icon (not in react-icons)
+const OutSystemsIcon = () => (
+  <svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" aria-label="OutSystems">
+    <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 4.5a9.5 9.5 0 1 1 0 19 9.5 9.5 0 0 1 0-19zm0 3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 3a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7z"/>
+  </svg>
+)
+
 import { portfolioData } from "@/data/portfolio"
 
 const MotionBox = motion.create(Box)
@@ -24,6 +31,7 @@ const skills = [
   { icon: SiPython, label: "Python", color: "#3776AB", delay: 0.3 },
   { icon: SiOpenai, label: "OpenAI", color: "#74AA9C", delay: 0.4 },
   { icon: TbBrain, label: "Agentic AI", color: "#a3e635", delay: 0.5 },
+  { icon: OutSystemsIcon, label: "OutSystems", color: "#E5323B", delay: 0.6 },
 ]
 
 const SkillCard = ({
