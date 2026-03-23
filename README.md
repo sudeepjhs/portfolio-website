@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sudeep Agarwal | Portfolio
 
-## Getting Started
+A high-performance, futuristic portfolio website built with **Next.js 16**, **Chakra UI v3**, and **Framer Motion**. Designed for technical architects and developers who want a premium, "Neon Monolith" aesthetic.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Sticky Glass Navbar**: Translucent navigation with backdrop-blur and dynamic scroll transitions.
+-   **Animated Hero**: Engaging typing effect for site-wide headlines with a technical blinking cursor.
+-   **Bento Grid Showcase**: A modern grid layout for project displays featuring ambient glow hover effects.
+-   **Technical Skills Section**: Skill badges designed with a "Data Badge" style (Category | Skill) using Geist Mono.
+-   **Futuristic Contact Form**: Minimalist input fields with high-contrast focused states.
+-   **Dark/Light Mode**: Full support for theme switching via Chakra UI v3's `ColorModeProvider`.
+-   **SEO Optimized**: Professional metadata and semantic HTML structure.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Frontend**: Next.js 16 (App Router)
+-   **Styling**: Chakra UI v3 (Snippet-based setup)
+-   **Animations**: Framer Motion
+-   **Typography**: Geist Sans & Geist Mono (via `next/font`)
+-   **Package Manager**: pnpm
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+-   Node.js 18+
+-   pnpm 10+
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  Clone the repository and install dependencies:
+    ```bash
+    pnpm install
+    ```
 
-## Deploy on Vercel
+2.  Run the development server:
+    ```bash
+    pnpm dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  Build for production:
+    ```bash
+    pnpm build
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Design System
+
+The project follows a **Neon Monolith** design strategy:
+-   **Base**: Deep Navy-Black (`#131318`)
+-   **Accent**: Neon Lime (`#a3e635`)
+-   **Typography**: Inter (Body) / Geist Mono (Technical Labels)
+-   **Depth**: Tonal shifts and ambient glows instead of hard borders or heavy shadows.
+
+---
+Built by Antigravity AI for Sudeep Agarwal.
