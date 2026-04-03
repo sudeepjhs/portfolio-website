@@ -128,7 +128,6 @@ export const portfolioData: PortfolioData = {
       location: "Indore, India",
       period: "Sep 2023 – Present",
       description: [
-        "Architected BizManage — a full-stack platform (Next.js, TypeScript, Prisma) with React Native mobile client covering RBAC, employee management, time tracking, and inventory.",
         "Engineered GPT-4 recruitment app automating ~70% of hiring tasks — resume parsing, candidate scoring, and interview scheduling.",
         "Implemented JWT + RBAC permission matrices shared across web and mobile, with NextAuth.js session management.",
         "Integrated Firebase FCM for real-time push notifications across iOS & Android.",
