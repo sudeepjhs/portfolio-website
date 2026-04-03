@@ -116,6 +116,20 @@ export const portfolioData: PortfolioData = {
   ],
   projects: [
     {
+      title: "BizManage — Business Management Platform",
+      description:
+        "Architected a full-stack business management solution with a Next.js web app and React Native mobile client, featuring role-based access control (RBAC), employee management, time & attendance tracking, and inventory operations — all sharing a unified JWT-authenticated REST API.",
+      tags: ["Next.js", "React Native", "TypeScript", "Prisma", "NextAuth.js", "React Query", "Chakra UI", "JWT", "RBAC"],
+      spanSize: 2
+    },
+    {
+      title: "BizManage Mobile",
+      description:
+        "Built cross-platform iOS & Android mobile app consuming the BizManage REST API, with JWT auth, Zustand state persistence, Firebase Cloud Messaging push notifications, and Zod schema validation.",
+      tags: ["React Native", "TypeScript", "Zustand", "JWT", "Firebase FCM", "Zod", "React Query", "Axios"],
+      spanSize: 1
+    },
+    {
       title: "AI Recruitment Platform",
       description:
         "Architected GPT-4 and OutSystems-based hiring platform automating resume parsing, candidate scoring, and interview scheduling.",
